@@ -1,9 +1,9 @@
 # Lists and Keys
 
-## Objectives
+## Learning Goals
 
-1. Transform arrays of data into arrays of JSX elements
-2. Understand the need for the `key` prop and when to use it
+- Transform arrays of data into arrays of JSX elements
+- Understand the need for the `key` prop and when to use it
 
 ## Working with Arrays
 
@@ -34,8 +34,8 @@ function ColorList() {
 }
 ```
 
-Try running this code in the browser to confirm it works - we've got a nice
-looking list going!
+Try running this code in the browser to confirm it works &mdash; we've got a
+nice looking list going!
 
 But as you can already tell, our code isn't very DRY, and this approach
 breaks down as soon as we add another color. How can we create these elements
@@ -62,8 +62,9 @@ scroll down...
 
 ...
 
-If you came up with `.map`, awesome! That's the perfect tool for the job here -
-we've got an array of 5 strings and we want an array of 5 JSX elements instead.
+If you came up with `.map`, awesome! That's the perfect tool for the job here
+&mdash; we've got an array of 5 strings and we want an array of 5 JSX elements
+instead.
 
 Here's how we could use `.map`:
 
@@ -96,12 +97,12 @@ Our code still works, but now, we can create the `<li>` elements _dynamically_
 based on the `colors` array. Adding a new string to that array means that our
 list grows without us having to create a new `<li>` by hand.
 
-## The `key` Prop
+## The key Prop
 
 If you run our updated demo code in the browser and open up the console, you'll
-see a big ol' warning message, like this:
+see a big warning message, like this:
 
-```
+```txt
 Warning: Each child in a list should have a unique "key" prop.
   Check the render method of `ColorList`.
 ```
@@ -134,7 +135,8 @@ Let's see a couple more examples of how this `key` prop can be used.
 
 ### With Objects
 
-If you have an array of objects, it's often best to use the object's `id` as the key:
+If you have an array of objects, it's often best to use the object's `id` as the
+key:
 
 ```js
 const users = [
@@ -161,11 +163,13 @@ const fibList = fib.map((number, index) => {
 ```
 
 While this will make the error message go away, it's not necessarily the best
-approach -- in fact, the React docs recommend
-[only using the index as a last resort](https://reactjs.org/docs/lists-and-keys.html#keys).
-If you're interested in some alternatives to using the index,
-[this article](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)
+approach &mdash; in fact, the React docs recommend
+[only using the index as a last resort][react docs keys]. If you're interested
+in some alternatives to using the index, [this article][index key anti-pattern]
 goes over a few suggestions.
+
+[react docs keys]: https://reactjs.org/docs/lists-and-keys.html#keys
+[index key anti-pattern]: https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318
 
 ### With Nested Components
 
@@ -201,7 +205,7 @@ the rest of the props in our functions**. If you add a `console.log(props)` in
 the `ColorItem` component, you won't see the `key` prop. This is because the
 `key` prop is meant for use internally by React.
 
-## Summary
+## Conclusion
 
 Any time you are creating an _array_ of JSX elements, you _must_ use the `key`
 prop on each element of that array.
