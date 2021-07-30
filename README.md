@@ -34,7 +34,7 @@ function ColorList() {
 }
 ```
 
-Try running this code in the browser to confirm it works &mdash; we've got a
+Try running this code in the browser to confirm it works — we've got a
 nice looking list going!
 
 But as you can already tell, our code isn't very DRY, and this approach
@@ -63,7 +63,7 @@ scroll down...
 ...
 
 If you came up with `.map`, awesome! That's the perfect tool for the job here
-&mdash; we've got an array of 5 strings and we want an array of 5 JSX elements
+— we've got an array of 5 strings and we want an array of 5 JSX elements
 instead.
 
 Here's how we could use `.map`:
@@ -163,7 +163,7 @@ const fibList = fib.map((number, index) => {
 ```
 
 While this will make the error message go away, it's not necessarily the best
-approach &mdash; in fact, the React docs recommend
+approach — in fact, the React docs recommend
 [only using the index as a last resort][react docs keys]. If you're interested
 in some alternatives to using the index, [this article][index key anti-pattern]
 goes over a few suggestions.
