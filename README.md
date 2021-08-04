@@ -9,7 +9,7 @@
 
 Let's suppose we had an array of our favorite CSS colors, and we wanted to display them each as separate components. We could do something like this:
 
-```js
+```jsx
 function ColorList() {
   const colors = [
     "firebrick",
@@ -109,7 +109,7 @@ Warning: Each child in a list should have a unique "key" prop.
 
 To fix this error, we must give each `<li>` element a special `key` prop, like so:
 
-```js
+```jsx
 const colorElements = colors.map((color) => {
   return (
     <li key={color} style={{ color: color }}>
@@ -138,7 +138,7 @@ Let's see a couple more examples of how this `key` prop can be used.
 If you have an array of objects, it's often best to use the object's `id` as the
 key:
 
-```js
+```jsx
 const users = [
   { id: 1, firstName: "Duane", lastName: "Watson" },
   { id: 2, firstName: "Duane", lastName: "Johnson" },
@@ -154,7 +154,7 @@ const userHeadings = users.map((user) => {
 If you have an array of elements that aren't unique, and you can't use the `id`,
 you might be tempted to use the index position instead:
 
-```js
+```jsx
 const fib = [0, 1, 1, 2, 3, 5];
 
 const fibList = fib.map((number, index) => {
@@ -177,7 +177,7 @@ Back to our `ColorList` example. Let's imagine we want to create a separate
 component to display each color. In the example below, we'd need to use the
 `key` prop on the `<ColorItem>` components, **not** the `<li>`:
 
-```js
+```jsx
 // ColorItem component
 function ColorItem(props) {
   return <li style={{ color: props.color }}>{props.color}</li>;
