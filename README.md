@@ -7,7 +7,9 @@
 
 ## Working with Arrays
 
-Let's suppose we had an array of our favorite CSS colors, and we wanted to display them each as separate components. We could do something like this:
+Let's suppose we had an array of our favorite CSS colors, and we wanted to
+display them as separate `li` elements in an ordered list. We could do something
+like this:
 
 ```jsx
 function ColorList() {
@@ -125,8 +127,8 @@ deleted, React can optimize performance and keep track internally of those
 changes.
 
 The key should be a **unique value** associated with each element from the
-array. Since each element in our array of colors is all unique, we can just use
-each color for the `key` prop.
+array. Since each element in our array of colors is unique, we can just use each
+color for the `key` prop.
 
 **Any time you are creating an _array_ of JSX elements, you _must_ use the `key`
 prop.**
@@ -207,11 +209,13 @@ the `ColorItem` component, you won't see the `key` prop. This is because the
 
 ## Conclusion
 
-Any time you are creating an _array_ of JSX elements, you _must_ use the `key`
-prop on each element of that array.
+In this lesson, we learned how to make our code more dynamic by using `.map` to
+transform an array of data into an array of JSX elements instead.
 
-The key should be some **unique value** for each element of the array. Indexes
-should not be used as keys (only as a last resort).
+We also learned that, any time you are creating an _array_ of JSX elements, you
+_must_ use the `key` prop on each element of that array. The key needs to be
+some **unique value** for each element of the array. Array indexes should
+**not** be used as keys.
 
 ## Resources
 
